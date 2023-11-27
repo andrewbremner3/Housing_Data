@@ -4,7 +4,10 @@ The data sets are 'un-cleaned' with empty rows and fields that need to be treate
 
 ### 1) Clean the Data
 Combined the Train and Test so that all treatments are done to the train and test.
-![](./Images/PercentMissingData.png)
+
+Image below shows the "percent missing" of the initial data set.
+
+<img src="./Images/PercentMissingData.png" width="800"/>
 
 Various Treatments:
 * Drop rows that are outliers
