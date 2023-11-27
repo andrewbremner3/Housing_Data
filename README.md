@@ -9,11 +9,29 @@ Image below shows the "percent missing" of the initial data set.
 
 <img src="./Images/PercentMissingData.png" width="800"/>
 
-Various Treatments:
+Cleaning Treatments:
 * Drop rows that are outliers
 * Drop rows that are nearly empty
-* Fill empty fields that are numerical with 0 and objects with 'None'
-  * test
-* Use average of similar values to fill 'LotFrontage' fields
+* Fill empty fields
+  * Numerical fields filled with 0
+  * Object fields usually filled with 'None'
+  * Average of similar values (same Neighborhood) to fill 'LotFrontage' fields
  
-Housing Data set for regression tests
+### 2) Use training data test protcol
+The hypothesis is that the numerical fields could be good enough for a strong model. The other option is to use 'dummy' variables for the catagories or object fields.
+
+* Numerical Data only
+  * Time to run: 5.22s
+  * Percent error of: 14.94%
+* All Data (dummy and numerical)
+  * Time to run: 50.11s
+  * Percent error of: 11.65%
+
+The extra data makes the fit take ~10x as long but has a measurably better error value.
+
+### 3) Final train and test
+The dummy variables made the RMSE better so that is what is used for the final setup.
+
+Use the entire training set to train the scaling as well as the grid search Elastic Net model.
+
+ 
