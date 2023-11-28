@@ -3,7 +3,7 @@ Regression predictions from Kaggle competition [www.kaggle.com](https://www.kagg
 The data sets are 'un-cleaned' with empty rows and fields that need to be treated in various ways.
 
 ### 1) Clean the Data
-Combined the Train and Test so that all treatments are done to the train and test.
+Combined the Train and Test so that all treatments are done uniformly (necessary for using dummy variables in the following steps).
 
 Image below shows the "percent missing" of the initial data set.
 
