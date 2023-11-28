@@ -21,17 +21,19 @@ Cleaning Treatments:
 The hypothesis is that the numerical fields could be good enough for a strong model. The other option is to use 'dummy' variables for the catagories or object fields.
 
 * Numerical Data only
-  * Time to run: 5.22s
-  * Percent error of: 14.94%
+  * Time to run: 10.81s
+  * Percent error of: 2.28%
 * All Data (dummy and numerical)
-  * Time to run: 50.11s
-  * Percent error of: 11.65%
+  * Time to run: 96.33s
+  * Percent error of: 1.28%
 
 The extra data makes the fit take ~10x as long but has a measurably better error value.
 
 ### 3) Final train and test
 The dummy variables made the RMSE better so that is what is used for the final setup.
 
-Use the entire training set to train the scaling as well as the grid search Elastic Net model.
+Use the entire training set to train the scaling as well as the Elastic Net model where the best parameters from the previous training were used. (Alpha = 200, l1_ratio = 1, max_iter = 10000).
+
+Results are simple and straight forward to understand for both the cleaning, training and learning on an imperfect data set.
 
  
