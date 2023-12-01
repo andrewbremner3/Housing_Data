@@ -30,8 +30,8 @@ The extra data makes the fit take ~10x as long but has a measurably better error
 
 Try a Random Forest Regression model as well.
 * All Data (dummy and numerical)
-  * Time to run: 0.39s
-  * Percent error of: 1.26%
+  * Time to run: 0.33s
+  * Percent error of: 1.32%
 This model is substantially faster and has a comparable error on test set.
 
 ### 3) Final train and test
