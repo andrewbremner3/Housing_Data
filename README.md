@@ -20,26 +20,50 @@ Cleaning Treatments:
 ### 2) Use training data test protcol
 The hypothesis is that the numerical fields could be good enough for a strong model. The other option is to use 'dummy' variables for the catagories or object fields.
 
+Elatic Net Simple model. (housing-data.ipynb)
 * Numerical Data only
   * Time to run: 10.81s
-  * Percent error of: 2.28%
+  * RMSE of log values = 0.274
 * All Data (dummy and numerical)
   * Time to run: 96.33s
-  * Percent error of: 1.28%
+  * RMSE of log values = 0.154
 The extra data makes the fit take ~10x as long but has a measurably better error value.
 
-Try a Random Forest Regression model as well.
+Random Forest Regression model. (housing-data_rfr.ipynb)
 * All Data (dummy and numerical)
-  * Time to run: 0.33s
-  * Percent error of: 1.32%
+  * Time to run: 0.34s
+  * RMSE of log values = 0.144
 This model is substantially faster and has a comparable error on test set.
 
-### 3) Final train and test
-The dummy variables made the RMSE better so that is what is used for the final Elastic Net setup.
-Use the entire training set to train the scaling as well as the Elastic Net model where the best parameters from the previous training were used. (Alpha = 200, l1_ratio = 1, max_iter = 10000).
-The results on Kaggle show there is probably over fitting as the score is quite bad at 6.7271
+Neural Network model.
+* All Data (dummy and numerical)
+  * Time to train: 37.59s
+  * RMSE of log values = 0.154
+ Similar results but slightly worse than the RFR model.
 
-A Random Forest Regression is then tried and shows substantially better results.
-The score is 0.1547 which is much better thanthe Elastic Net model.
+Gradient Boosted Regressor model.
+* All Data (dummy and numerical)
+  * Time to run: 142.81s
+  * RMSE of log values = 0.156
+
+### 3) Final train and test
+The dummy variables made the RMSE better so that is what is used for the final data set predictions.
+Use the entire training set to train the scaling with a few of the different models that are shown above.
+
+Results:
+
+Elastic net over fit with poor results: 
+* Score = 6.7271
+  
+Random Forest Regression was quite good:
+* Score = 0.15474
+  
+Neural Network Model:
+* model = TabluarModel(emb_szs, con_train.shape[1], 1, [100,50], 0.4)
+* optimizer = torch.optim.Adam(model.parameters(),lr=0.02)
+* Score = 0.19349
+  
+Gradient Boost Model:
+* **Score = 0.14466 BEST**
 
  
