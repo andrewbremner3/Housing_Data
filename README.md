@@ -35,13 +35,13 @@ Random Forest Regression model. (housing-data_rfr.ipynb)
   * RMSE of log values = 0.144
 This model is substantially faster and has a comparable error on test set.
 
-Neural Network model.
+Neural Network model. (housing-data-nn.ipynb)
 * All Data (dummy and numerical)
   * Time to train: 37.59s
   * RMSE of log values = 0.154
  Similar results but slightly worse than the RFR model.
 
-Gradient Boosted Regressor model.
+Gradient Boosted Regressor model. (housing-data_boost.ipynb)
 * All Data (dummy and numerical)
   * Time to run: 142.81s
   * RMSE of log values = 0.156
