@@ -20,7 +20,7 @@ Cleaning Treatments:
 ### 2) Use training data test protcol
 The hypothesis is that the numerical fields could be good enough for a strong model. The other option is to use 'dummy' variables for the catagories or object fields.
 
-Elatic Net Simple model. (housing-data.ipynb)
+Elastic Net Simple model. (housing-data.ipynb)
 * Numerical Data only
   * Time to run: 10.81s
   * RMSE of log values = 0.274
